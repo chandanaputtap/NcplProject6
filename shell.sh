@@ -5,7 +5,7 @@ source .env
 
 # Login to Azure using Service Principal credentials
 echo "Logging into Azure using Service Principal..."
-az login --service-principal --username $AZURE_APP_ID --password $AZURE_PASSWORD --tenant $AZURE_TENANT
+az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
 
 # Verify login
 if [ $? -ne 0 ]; then
