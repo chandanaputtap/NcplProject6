@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Load Azure Service Principal credentials
-source ./azure_env.sh
+source .env
 
 # Login to Azure using Service Principal credentials
 echo "Logging into Azure using Service Principal..."
-az login --service-principal --username $SP_APP_ID --password $SP_PASSWORD --tenant $SP_TENANT_ID
+az login --service-principal --username $AZURE_APP_ID --password $AZURE_PASSWORD --tenant $AZURE_TENANT
 
 # Verify login
 if [ $? -ne 0 ]; then
@@ -24,4 +24,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "Storage account deployed successfully!"
-az deployment group create --resource-group NcplProject6-CanadaCentral --template-file storageAccount.json
+az deployment group create --resource-group NcplAzureProject6-RG --template-file storageAccount.json
