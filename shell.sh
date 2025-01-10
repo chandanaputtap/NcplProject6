@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load Azure Service Principal credentials
-source .env
+source /home/azureuser/config.env
 
 # Login to Azure using Service Principal credentials
 echo "Logging into Azure using Service Principal..."
