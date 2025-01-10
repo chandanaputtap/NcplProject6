@@ -6,11 +6,15 @@
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2021-04-01",
       "location": "[resourceGroup().location]",
-      "properties": {
-        "accountType": "Standard_LRS",
-        "accessTier": "Hot"
+      "name": "[variables('storageAccountName')]",
+      "sku": {
+        "name": "Standard_LRS"
       },
-      "name": "[concat('mystorageaccount', uniqueString(resourceGroup().id))]"
+      "kind": "StorageV2",
+      "properties": {}
     }
-  ]
+  ],
+  "variables": {
+    "storageAccountName": "myuniquestorageaccountname"
+  }
 }
